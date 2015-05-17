@@ -5,27 +5,11 @@ var path = require('path'),
     fileStorage,
     storage;
 
-fileStorage = false
-storage = {}
-
 config = {
 
   // Production (Heroku)
   production: {
-    url: process.env.HEROKU_URL,
-    mail: {
-      transport: 'SMTP',
-      host: 'smtp.mandrillapp.com',
-      options: {
-        service: 'Mandrill',
-        auth: {
-          user: process.env.MANDRILL_USERNAME,
-          pass: process.env.MANDRILL_APIKEY
-        }
-      }
-    },
-    fileStorage: fileStorage,
-    storage: storage,
+    url: 'http://blog.rafaelgontijo.com',
     database: {
       client: 'postgres',
       connection: process.env.DATABASE_URL,
