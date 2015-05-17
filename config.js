@@ -5,20 +5,8 @@ var path = require('path'),
     fileStorage,
     storage;
 
-if (!!process.env.S3_ACCESS_KEY_ID) {
-  fileStorage = true
-  storage = {
-    active: 'ghost-s3',
-    'ghost-s3': {
-      accessKeyId:     process.env.S3_ACCESS_KEY_ID,
-      secretAccessKey: process.env.S3_ACCESS_SECRET_KEY,
-      bucket:          process.env.S3_BUCKET_NAME
-    }
-  }
-} else {
-  fileStorage = false
-  storage = {}
-}
+fileStorage = false
+storage = {}
 
 config = {
 
