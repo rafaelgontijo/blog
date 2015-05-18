@@ -2,12 +2,10 @@
 
 var path = require('path'),
     config,
-    fileStorage,
-    storage;
+    fileStorage;
 
 config = {
 
-  // Production (Heroku)
   production: {
     url: 'http://blog.rafaelgontijo.com',
     database: {
@@ -15,6 +13,7 @@ config = {
       connection: process.env.DATABASE_URL,
       debug: false
     },
+    fileStorage: true,
     server: {
       host: '0.0.0.0',
       port: process.env.PORT
@@ -23,8 +22,6 @@ config = {
       contentPath: path.join(__dirname, '/content/')
     }
   },
-
-  // Development
   development: {
     url: 'http://localhost:2368',
     database: {
